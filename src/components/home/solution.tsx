@@ -12,10 +12,10 @@ export default function Solution() {
         <h1 className="md:text-8xl text-5xl font-bold">Why EchoSphere?</h1>
 
         <div
-            className={'grid grid-cols-1 px-3 text-balance md:px-0 md:grid-cols-3 items-center bg-white bg-gradient-to-b from-transparent to-dark bg-[size:4px_auto] bg-repeat-y  bg-right md:bg-center mt-8'}>
+            className={'grid grid-cols-1 px-3 text-balance md:px-0 md:grid-cols-3 items-center bg-white bg-gradient-to-b from-transparent to-dark bg-[size:4px_auto] bg-repeat-y bg-right md:bg-center mt-8'}>
             <div className={'col-span-1 py-16 flex items-center'}>
                 <PredictiveAnalyticsSvg
-                     className={'rounded-xl aspect-video object-cover fill-primary '}/>
+                     className={'rounded-xl aspect-video object-cover fill-primary w-full'}/>
             </div>
             <div className={'mx-auto w-max h-max rounded-full bg-gray-200 p-2'}>
                 <div className={'rounded-full bg-primary p-3 '}/>
@@ -38,12 +38,12 @@ export default function Solution() {
             </div>
             <div className={'row-span-1 col-span-1 py-16 flex items-center'}>
                 <OnlineOrganizer
-                     className={'rounded-xl aspect-video object-cover fill-primary'}/>
+                     className={'rounded-xl aspect-video object-cover fill-primary w-full'}/>
             </div>
 
             <div className={'row-span-1 col-span-1 py-16 flex items-center'}>
                 <TaskListSvg
-                     className={'rounded-xl aspect-video object-cover fill-primary'}/>
+                     className={'rounded-xl aspect-video object-cover fill-primary w-full'}/>
             </div>
             <div className={'mx-auto w-max h-max rounded-full bg-gray-200 p-2'}>
                 <div className={'rounded-full bg-primary p-3'}/>
@@ -66,7 +66,7 @@ export default function Solution() {
             </div>
             <div className={'row-span-1 col-span-1 py-16 flex items-center'}>
                 <DataReports
-                     className={'rounded-xl aspect-video object-cover fill-primary '}/>
+                     className={'rounded-xl aspect-video object-cover fill-primary w-full'}/>
             </div>
         </div>
     </section>
