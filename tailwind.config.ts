@@ -8,16 +8,18 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    colors: {
-      primary: "#FF4A00",
-      dark: "#401300",
-      body: "#e9e9e9",
-      ...colors,
-    },
     fontFamily: {
       sans: ["Urbanist", "sans-serif"],
     },
     extend: {
+      colors: {
+        primary: "#FF4A00",
+        dark: "#262626",
+        body: "#e9e9e9",
+      },
+      aspectRatio: {
+        '20/5': '20 / 7'
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
