@@ -2,9 +2,9 @@ import PredictiveAnalyticsSvg from "@/svg/predictiveAnalytics";
 
 export default function Insights() {
 
-    return <section className={'bg-dark text-white py-24 px-7 md:px-24'}>
-        <div className={'grid grid-cols-2 gap-24'}>
-            <div className={'bg-body rounded-xl m-8 p-8'}>
+    return <section className={'bg-dark text-white py-24 px-7 lg:px-24'}>
+        <div className={'grid grid-cols-1 lg:grid-cols-2 gap-24'}>
+            <div className={'bg-body rounded-xl lg:m-8 p-8'}>
                 <PredictiveAnalyticsSvg
                     className={'rounded-xl aspect-square object-cover fill-primary w-full'}/>
             </div>

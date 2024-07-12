@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Footer() {
     return <footer className="w-full py-16 bg-dark text-white text-center md:px-24 px-7 ">
-        <div className={'grid grid-cols-5 md:gap-8'}>
+        <div className={'grid grid-cols-1 lg:grid-cols-5 md:gap-8'}>
             <div className={'text-start md:col-span-2 flex flex-col justify-between'}>
                 <Link href={'/'} className={'w-max text-3xl font-semibold'}>EchoSphere</Link>
                 <div className={'mt-8'}>

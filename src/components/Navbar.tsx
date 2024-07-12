@@ -27,14 +27,14 @@ export default function Navbar() {
     const path = usePathname()
     const [open, setOpen] = useState(false);
     return <div
-        className={'flex w-full bg-body md:px-24 px-7 py-4 justify-between text-dark fixed top-0 left-0 z-10'}>
+        className={'flex w-screen bg-body md:px-24 px-7 py-4 justify-between text-dark fixed top-0 left-0 z-10'}>
         <Link href={'/'} className={'w-max text-2xl font-semibold'}>EchoSphere</Link>
         <div onClick={() => setOpen(!open)} className='absolute right-8 top-6 cursor-pointer md:hidden w-7 h-7'>
             {
                 open ? <XMarkIcon/> : <Bars3BottomRightIcon/>
             }
         </div>
-        <ul className={`md:space-x-8 md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-body md:z-auto z-[-2] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-12' : 'top-[-490px]'}`}>
+        <ul className={`md:space-x-8 md:flex md:items-center md:pb-0 pb-12 bg-body absolute md:static md:z-auto z-[-2] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-12' : 'top-[-490px]'}`}>
             {
                 navigation.map((item, index) => <li key={index} className={'md:ml-8 md:my-0 my-7'}><Link
                     href={item.href}

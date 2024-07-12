@@ -2,8 +2,8 @@
 
 export default function Experiences() {
 
-    return <section className={'md:px-24 px-7 py-24 bg-white text-dark'}>
-        <div className={'grid grid-cols-2 gap-24'}>
+    return <section className={'lg:px-24 px-7 py-24 bg-white text-dark'}>
+        <div className={'grid grid-cols-1 md:grid-cols-2 md:gap-8 lg:gap-24'}>
             <div className={'text-7xl font-semibold text-balance'}>
                 Growth is inevitable and we are here for it
             </div>
@@ -12,7 +12,7 @@ export default function Experiences() {
                     We will help you modernize and digitally transform your business
                 </div>
 
-                <div className={'grid grid-cols-3 mt-16'}>
+                <div className={'grid grid-cols-3 md:grid-cols-1 lg:grid-cols-3 mt-16 gap-8'}>
                     <div >
                         <div className={'text-5xl font-medium'}>10M+</div>
                         <div className={'text-2xl text-gray-500'}>Total Customers</div>
