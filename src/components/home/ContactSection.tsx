@@ -1,6 +1,6 @@
 export default function ContactSection() {
 
-    return <section className={'md:px-7 lg:px-24 py-24 bg-white'}>
+    return <section className={'md:px-7 lg:px-24 py-24 bg-white'} data-navbar-bg="bg-white text-dark">
         <div className={'md:rounded-xl bg-body p-16 max-sm:px-7 lg:pb-0 grid grid-cols-1 lg:grid-cols-2 gap-24'}>
             <div className={'flex flex-col justify-center gap-8'}>
                 <div className={'text-7xl font-semibold'}>Get ready to start</div>

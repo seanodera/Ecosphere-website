@@ -2,7 +2,7 @@
 
 export default function Experiences() {
 
-    return <section className={'lg:px-24 px-7 py-24 bg-white text-dark'}>
+    return <section className={'lg:px-24 px-7 py-24 bg-white text-dark'} data-navbar-bg="bg-white text-dark">
         <div className={'grid grid-cols-1 md:grid-cols-2 md:gap-8 lg:gap-24'}>
             <div className={'text-7xl font-semibold text-balance'}>
                 Growth is inevitable and we are here for it

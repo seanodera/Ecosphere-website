@@ -1,5 +1,5 @@
 export default function TeamProductivity() {
-    return <section className={'px-7 lg:px-24 py-24'}>
+    return <section className={'px-7 lg:px-24 py-24'} data-navbar-bg="bg-body text-dark">
         <div className={'grid grid-cols-1 md:grid-cols-2 mb-16 gap-8 md:gap-0 md:gap-y-16 lg:gap-16'}>
             <div className={'text-7xl font-semibold'}>
                 Boost your teams productivity

@@ -2,7 +2,7 @@
 import Link from "next/link";
 import {usePathname} from "next/navigation";
 import {Bars3BottomRightIcon, XMarkIcon} from "@heroicons/react/24/outline";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 const navigation = [
     {
@@ -26,19 +26,48 @@ const navigation = [
 export default function Navbar() {
     const path = usePathname()
     const [open, setOpen] = useState(false);
+
+    const [navbarBg, setNavbarBg] = useState<string>('bg-body text-dark');
+
+    useEffect(() => {
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const bgClass = entry.target.getAttribute('data-navbar-bg');
+                        console.log(bgClass);
+                        if (bgClass) {
+                            setNavbarBg(bgClass);
+                        } else {
+                            setNavbarBg('bg-body text-dark')
+                        }
+                    }
+                });
+            },
+            { threshold: 0.8 } // Adjust this threshold as needed
+        );
+
+        sections.forEach((section) => observer.observe(section));
+
+        return () => {
+            sections.forEach((section) => observer.unobserve(section));
+        };
+    }, [path]);
+
     return <div
-        className={'flex w-screen bg-body md:px-24 px-7 py-4 justify-between text-dark fixed top-0 left-0 z-10'}>
+        className={`flex w-screen md:px-24 px-7 py-4 justify-between fixed top-0 left-0 z-10 transition-colors duration-500 ease-in-out ${navbarBg}`}>
         <Link href={'/'} className={'w-max text-2xl font-semibold'}>EchoSphere</Link>
         <div onClick={() => setOpen(!open)} className='absolute right-8 top-6 cursor-pointer md:hidden w-7 h-7'>
             {
                 open ? <XMarkIcon/> : <Bars3BottomRightIcon/>
             }
         </div>
-        <ul className={`md:space-x-8 md:flex md:items-center md:pb-0 pb-12 bg-body absolute md:static md:z-auto z-[-2] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-12' : 'top-[-490px]'}`}>
+        <ul className={`md:space-x-8 md:flex md:items-center md:pb-0 pb-12 absolute md:static md:z-auto z-[-2] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in-out ${open ? 'top-12' : 'top-[-490px]'} ${navbarBg}`}>
             {
                 navigation.map((item, index) => <li key={index} className={'md:ml-8 md:my-0 my-7'}><Link
                     href={item.href}
-                    className={` font-medium group ${(path === item.href) ? 'text-primary' : 'text-gray-500'} hover:text-dark`}>{item.name}
+                    className={` font-medium group ${(path === item.href) ? 'text-primary' : 'text-gray-500'} hover:${navbarBg.split(' ').at(1)}`}>{item.name}
                     <div
                         className={'hidden md:block h-0.5 bg-primary scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-300 ease-out'}/>
                 </Link>

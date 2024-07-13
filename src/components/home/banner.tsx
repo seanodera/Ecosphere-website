@@ -2,7 +2,7 @@ import BannerSVG from "@/svg/BannerSVG";
 
 export default function Banner() {
 
-    return <section className={'text-center md:px-24 bg-body text-black py-32'}>
+    return <section className={'text-center md:px-24 bg-body text-black py-32'} data-navbar-bg="bg-body text-dark">
         <div className={'grid sm:grid-cols-1 md:grid-cols-2 gap-3'}>
             <div
                 className={'flex flex-col text-start md:pe-16 gap-8 col-span-1 items-center md:items-start justify-center mb-4 object-contain'}>

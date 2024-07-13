@@ -39,7 +39,7 @@ export default function Testimonials() {
     }
 
 
-    return <section className={'bg-dark text-white px-7 lg:ps-24 lg:pe-0 py-24'}>
+    return <section className={'bg-dark text-white px-7 lg:ps-24 lg:pe-0 py-24'} data-navbar-bg="bg-dark text-white">
         <div className={'grid grid-cols-1 lg:grid-cols-2 gap-y-16'}>
             <div className={'flex flex-col items-center lg:items-start'}>
                 <div className={'text-7xl font-semibold'}>
