@@ -26,8 +26,9 @@ const navigation = [
 export default function Navbar() {
     const path = usePathname()
     const [open, setOpen] = useState(false);
+    const [windowHeight, setWindowHeight] = useState(0);
+    const [navbarBg, setNavbarBg] = useState<string>('bg-white text-dark');
 
-    const [navbarBg, setNavbarBg] = useState<string>('bg-body text-dark');
 
     useEffect(() => {
         const sections = document.querySelectorAll('section');
@@ -36,7 +37,6 @@ export default function Navbar() {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         const bgClass = entry.target.getAttribute('data-navbar-bg');
-                        console.log(bgClass);
                         if (bgClass) {
                             setNavbarBg(bgClass);
                         } else {
@@ -55,8 +55,12 @@ export default function Navbar() {
         };
     }, [path]);
 
+
+
+
+
     return <div
-        className={`flex w-screen md:px-24 px-7 py-4 justify-between fixed top-0 left-0 z-10 transition-colors duration-500 ease-in-out ${navbarBg}`}>
+        className={`flex w-screen md:px-24 px-7 py-4 justify-between fixed top-0 left-0 z-10 transition-colors duration-500 ease-in-out ${navbarBg} ${path !== '/'? 'shadow-md' : ''}`}>
         <Link href={'/'} className={'w-max text-2xl font-semibold'}>EchoSphere</Link>
         <div onClick={() => setOpen(!open)} className='absolute right-8 top-6 cursor-pointer md:hidden w-7 h-7'>
             {
